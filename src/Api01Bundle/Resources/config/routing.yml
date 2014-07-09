@@ -1,0 +1,3 @@
+cerad_api01_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CeradApi01Bundle:Default:index }
