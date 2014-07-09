@@ -5,3 +5,6 @@ services:
 #    cerad_api01.example:
 #        class: %cerad_api01.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+  cerad_api01__project_game__find__controller:
+    class: Cerad\Bundle\Api01Bundle\Controller\ProjectGame\FindController
+    
