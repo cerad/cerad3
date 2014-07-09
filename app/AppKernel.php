@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             
           //new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             
+            new Cerad\Bundle\ProjectGameBundle\CeradProjectGameBundle(),
             new Cerad\Bundle\Api01Bundle\CeradApi01Bundle(),
         );
 
