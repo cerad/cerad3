@@ -41,6 +41,7 @@ class FindControllerTest extends WebTestCase
         
         $game = json_decode($content,true);
         
+        $this->assertEquals(11001,$game['num']);
         $this->assertEquals('John Hunt',$game['venueName']);
     }
 }

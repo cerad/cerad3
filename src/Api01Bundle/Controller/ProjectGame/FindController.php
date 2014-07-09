@@ -6,10 +6,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class FindController
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, $gameNum)
     {
         $projectKey = $request->attributes->get('projectKey');
-        $gameNum    = $request->attributes->get('gameNum');
+      //$gameNum    = $request->attributes->get('gameNum');
         
         $game = array(
             'projectKey' => $projectKey,
