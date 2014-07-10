@@ -8,3 +8,8 @@ services:
   cerad_api01__project_game__find__controller:
     class: Cerad\Bundle\Api01Bundle\Controller\ProjectGame\FindController
     
+  cerad_api01__docs__controller:
+    class: Cerad\Bundle\Api01Bundle\Action\Docs\DocsController
+    calls:
+      - [setTemplating, ['@templating']]
+    

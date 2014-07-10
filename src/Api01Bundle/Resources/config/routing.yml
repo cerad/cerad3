@@ -1,6 +1,2 @@
 
-cerad_api01__project_game__find:
-  path: /projects/{projectKey}/games/{gameNum}
-  defaults:
-    _controller: cerad_api01__project_game__find__controller:__invoke
     

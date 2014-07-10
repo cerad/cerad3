@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FindControllerTest extends WebTestCase
 {
-    protected $project = '/projects/AYSONationalGames2014/';
+    protected $project = '/0.1/project/AYSONationalGames2014/';
     
     public function testNotFound()
     {
@@ -30,7 +30,7 @@ class FindControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('GET', $this->project . 'games/11001');
+        $client->request('GET', $this->project . 'game/11001');
         
         $response = $client->getResponse();
         
