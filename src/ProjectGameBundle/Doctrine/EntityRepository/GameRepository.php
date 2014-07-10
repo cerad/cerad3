@@ -1,6 +1,8 @@
 <?php
 namespace Cerad\Bundle\ProjectGameBundle\Doctrine\EntityRepository;
 
+use Doctrine\ORM\AbstractQuery;
+
 use Cerad\Bundle\CoreBundle\Doctrine\EntityRepository;
 
 class GameRepository extends EntityRepository
@@ -13,6 +15,22 @@ class GameRepository extends EntityRepository
     public function findOneByProjectNum($projectKey,$num)
     {
         return $this->findOneBy(array('projectKey' => $projectKey, 'num' => $num));    
+    }
+    public function findOneArrayByProjectNum($projectKey,$num)
+    {
+        $qb = $this->createQueryBuilder('game');
+        
+        $qb->select('game,gameTeam');
+        
+        $qb->leftJoin('game.teams','gameTeam');
+        
+        $qb->andWhere('game.projectKey = :projectKey');
+        $qb->setParameter('projectKey',$projectKey);
+        
+        $qb->andWhere('game.num = :num');
+        $qb->setParameter('num',$num);
+        
+        return $qb->getQuery()->getOneOrNullResult(AbstractQuery::HYDRATE_ARRAY);
     }
     /* ========================================================
      * Generic schedule query

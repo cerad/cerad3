@@ -6,18 +6,32 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class FindController
 {
-    public function __invoke(Request $request, $gameNum)
+    protected $gameRepo;
+    
+    public function __construct($gameRepo)
     {
-        $projectKey = $request->attributes->get('projectKey');
-      //$gameNum    = $request->attributes->get('gameNum');
+        $this->gameRepo = $gameRepo;
+    }
+    public function __invoke(Request $request, $projectId, $gameNumber)
+    {
+        $game = $this->gameRepo->findOneArrayByProjectNum($projectId,$gameNumber);
+        print_r($game);
         
-        $game = array(
-            'projectKey' => $projectKey,
-            'num'        => $gameNum,
-            'venueName'  => 'John Hunt',
-            'fieldName'  => 'JH03',
+        // Serializing is painful
+        $item = array(
+            'projectKey' => $game['projectKey'],
+            'num'        => $game['num'],
+            'dtBeg'      => $game['dtBeg']->format('Y-m-d H:i:s'),
+            'venueName'  => $game['venueName'],
+            'fieldName'  => $game['fieldName'],
+            
+            'levelKey'   => $game['levelKey' ],
+            'groupType'  => $game['groupType'],
+            'groupName'  => $game['groupName'],
+            'status'     => $game['status'],
+            'teams'      => array(),
         );
-        return new JsonResponse($game);
+        return new JsonResponse($item);
     }
 }
 

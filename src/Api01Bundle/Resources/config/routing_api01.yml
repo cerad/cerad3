@@ -6,7 +6,7 @@ cerad_api01__docs:
     _template: '@CeradApi01/Docs/DocsTwigPage.twig'
     
 cerad_api01__project_game__find:
-  path: /project/{projectId}/game/{gameNum}
+  path: /project/{projectId}/game/{gameNumber}
   defaults:
     _controller: cerad_api01__project_game__find__controller:__invoke
 
