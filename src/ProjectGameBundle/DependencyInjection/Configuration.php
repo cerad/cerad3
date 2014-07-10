@@ -1,6 +1,6 @@
 <?php
 
-namespace Cerad\Bundle\Api01Bundle\DependencyInjection;
+namespace Cerad\Bundle\ProjectGameBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

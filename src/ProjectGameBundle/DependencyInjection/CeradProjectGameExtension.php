@@ -1,6 +1,6 @@
 <?php
 
-namespace Cerad\Bundle\ProjectGame\DependencyInjection;
+namespace Cerad\Bundle\ProjectGameBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
