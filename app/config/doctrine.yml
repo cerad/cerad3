@@ -40,7 +40,7 @@ doctrine:
           CeradProjectGameBundle: 
             prefix: Cerad\Bundle\ProjectGameBundle\Doctrine\Entity
             type:   yml
-            dir:    Doctrine\EntityMapping
+            dir:    Doctrine/EntityMapping
         dql:
           datetime_functions:
             date:  Cerad\Bundle\CoreBundle\Doctrine\DQL\Date
