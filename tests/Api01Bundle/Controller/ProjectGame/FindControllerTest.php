@@ -10,11 +10,11 @@ class FindControllerTest extends WebTestCase
 {
     protected $project = '/0.1/project/AYSONationalGames2014/';
     
-    public function testNotFound()
+    public function testRequestNotFound()
     {
         $client = static::createClient();
 
-        $client->request('GET', '/project/natgames/games/11001');
+        $client->request('GET', '/project/natgames/games/11001');  // games instead of game
         
         $response = $client->getResponse();
 
@@ -22,11 +22,11 @@ class FindControllerTest extends WebTestCase
         $statusText = Response::$statusTexts[$statusCode];
         
         $this->assertEquals('Symfony\Component\HttpFoundation\Response',get_class($response));
-        $this->assertEquals(404,$response->getStatusCode());
+        $this->assertEquals(Response::HTTP_NOT_FOUND,$response->getStatusCode());
         $this->assertEquals('Not Found',$statusText);
         $this->assertEquals('text/html; charset=UTF-8',$response->headers->get('Content-Type'));
     }
-    public function testFind()
+    public function testFindProjectGame()
     {
         $client = static::createClient();
 
@@ -34,7 +34,7 @@ class FindControllerTest extends WebTestCase
         
         $response = $client->getResponse();
         
-        $this->assertEquals(200,$response->getStatusCode());
+        $this->assertEquals(Response::HTTP_OK,$response->getStatusCode());
         $this->assertEquals('application/json',$response->headers->get('Content-Type'));
         
         $content = $response->getContent();
@@ -46,5 +46,17 @@ class FindControllerTest extends WebTestCase
         $this->assertEquals('Toyota Sports Complex',$game['venueName']);
         $this->assertEquals('MA1',$game['fieldName']);
         $this->assertEquals('2014-07-03 10:30:00',$game['dtBeg']);
+    }
+    public function testFindProjectGameWithBadNumber()
+    {
+        $client = static::createClient();
+
+        $client->request('GET', $this->project . 'game/91001');
+        
+        $response = $client->getResponse();
+        
+        $this->assertEquals(Response::HTTP_NOT_FOUND,$response->getStatusCode());
+        $this->assertEquals('No Project Game For AYSONationalGames2014 91001',$response->getContent());
+        
     }
 }
