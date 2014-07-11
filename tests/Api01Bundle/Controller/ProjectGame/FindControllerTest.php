@@ -26,6 +26,7 @@ class FindControllerTest extends WebTestCase
         $this->assertEquals('Not Found',$statusText);
         $this->assertEquals('text/html; charset=UTF-8',$response->headers->get('Content-Type'));
     }
+    //  curl local.api.zayso.org/0.1/project/AYSONationalGames2014/game/11001
     public function testFindProjectGame()
     {
         $client = static::createClient();
