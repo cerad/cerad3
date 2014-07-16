@@ -2,6 +2,11 @@ parameters:
 
 services:
 
+  cerad_api01__project__find__controller:
+    class: Cerad\Bundle\Api01Bundle\Action\Project\FindController
+    arguments:
+      - '%kernel.root_dir%/config/projects/'
+      
   cerad_api01__project_game__find__controller:
     class: Cerad\Bundle\Api01Bundle\Controller\ProjectGame\FindController
     arguments:
