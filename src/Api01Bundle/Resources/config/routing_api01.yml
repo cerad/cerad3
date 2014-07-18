@@ -1,17 +1,24 @@
-
+# ==============================
+# Documentation
 cerad_api01__docs:
   path: /docs
   defaults:
     _controller: cerad_api01__docs__controller:__invoke
     _template: '@CeradApi01/Docs/DocsTwigPage.twig'
-        
-cerad_api01__project_game__find:
-  path: /project/{projectId}/game/{gameNumber}
-  defaults:
-    _controller: cerad_api01__project_game__find__controller:__invoke
 
-cerad_api01__project__find:
+# ==============================
+# Project
+cerad_api01__project__find_one:
   path: /project/{projectId}
   defaults:
-    _controller: cerad_api01__project__find__controller:__invoke
+    _controller: cerad_api01__project__find_one__controller:__invoke
+    
+# ==============================
+# ProjectGame
+cerad_api01__project_game__find_one:
+  path: /project/{projectId}/game/{gameNumber}
+  defaults:
+    _controller: cerad_api01__project_game__find_one__controller:__invoke
+
+
    

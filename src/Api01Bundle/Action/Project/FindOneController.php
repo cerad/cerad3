@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Yaml\Yaml;
 
-class FindController
+class FindOneController
 {
     protected $projectDir;
     
