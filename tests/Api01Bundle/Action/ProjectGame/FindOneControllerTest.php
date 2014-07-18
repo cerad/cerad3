@@ -1,12 +1,12 @@
 <?php
 
-namespace Cerad\Bundle\Api01Bundle\Controller\ProjectGame;
+namespace Cerad\Bundle\Api01Bundle\Action\ProjectGame;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class FindControllerTest extends WebTestCase
+class FindOneControllerTest extends WebTestCase
 {
     protected $project = '/0.1/project/AYSONationalGames2014/';
     

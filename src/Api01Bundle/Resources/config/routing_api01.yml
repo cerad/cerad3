@@ -20,5 +20,10 @@ cerad_api01__project_game__find_one:
   defaults:
     _controller: cerad_api01__project_game__find_one__controller:__invoke
 
+cerad_api01__project_game__find_all:
+  path: /project/{projectId}/games
+  defaults:
+    _controller: cerad_api01__project_game__find_all__controller:__invoke
+
 
    

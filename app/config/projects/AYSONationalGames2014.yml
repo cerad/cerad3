@@ -15,8 +15,56 @@ title:   "AYSO National Games 2014"
 desc:    "AYSO National Games 2014 - Section One, California - June 30 to July 6"
 results: natgames
      
-programs: [Core,Extra]
-dates:    ['2014-07-02','2014-07-03','2014-07-04','2014-07-05','2014-07-06']
+programs: 
+  Core  : Core
+  Extra : Extra
+
+dates:
+  '2014-07-02': Wed
+  '2014-07-03': Thu
+  '2014-07-04': Fri
+  '2014-07-05': Sat
+  '2014-07-06': Sun
+
+genders:
+  B:   Boys
+  G:   Girls
+
+ages:     
+  VIP: VIP
+  U10: U10
+  U12: U12
+  U14: U14
+  U16: U16
+  U19: U19
+
+levels:
+  AYSO_VIP_Core:  { name: VIP Core,  program: Core,  age: VIP, gender: VIP }
+  AYSO_VIP_Extra: { name: VIP Extra, program: Extra, age: VIP, gender: VIP }
+    
+  AYSO_U10B_Core: { name: U10B Core, program: Core, age: U10, gender: B }
+  AYSO_U12B_Core: { name: U12B Core, program: Core, age: U12, gender: B }
+  AYSO_U14B_Core: { name: U14B Core, program: Core, age: U14, gender: B }
+  AYSO_U16B_Core: { name: U16B Core, program: Core, age: U16, gender: B }
+  AYSO_U19B_Core: { name: U19B Core, program: Core, age: U19, gender: B }
+  
+  AYSO_U10G_Core: { name: U10G Core, program: Core, age: U10, gender: G }
+  AYSO_U12G_Core: { name: U12G Core, program: Core, age: U12, gender: G }
+  AYSO_U14G_Core: { name: U14G Core, program: Core, age: U14, gender: G }
+  AYSO_U16G_Core: { name: U16G Core, program: Core, age: U16, gender: G }
+  AYSO_U19G_Core: { name: U19G Core, program: Core, age: U19, gender: G }
+  
+  AYSO_U10B_Extra: { name: U10B Extra, program: Extra, age: U10, gender: B }
+  AYSO_U12B_Extra: { name: U12B Extra, program: Extra, age: U12, gender: B }
+  AYSO_U14B_Extra: { name: U14B Extra, program: Extra, age: U14, gender: B }
+  AYSO_U16B_Extra: { name: U16B Extra, program: Extra, age: U16, gender: B }
+  AYSO_U19B_Extra: { name: U19B Extra, program: Extra, age: U19, gender: B }
+  
+  AYSO_U10G_Extra: { name: U10G Extra, program: Extra, age: U10, gender: G }
+  AYSO_U12G_Extra: { name: U12G Extra, program: Extra, age: U12, gender: G }
+  AYSO_U14G_Extra: { name: U14G Extra, program: Extra, age: U14, gender: G }
+  AYSO_U16G_Extra: { name: U16G Extra, program: Extra, age: U16, gender: G }
+  AYSO_U19G_Extra: { name: U19G Extra, program: Extra, age: U19, gender: G }
 
 old: 
   submit:  "Emails your application to Art Hundiak and yourself."

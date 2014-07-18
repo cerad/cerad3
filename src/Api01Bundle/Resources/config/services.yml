@@ -1,19 +1,30 @@
 parameters:
 
 services:
+  # ==========================================================
+  # Documentation
+  cerad_api01__docs__controller:
+    class: Cerad\Bundle\Api01Bundle\Action\Docs\DocsController
+    calls:
+      - [setTemplating, ['@templating']]
 
+  # ==========================================================
+  # Project
   cerad_api01__project__find_one__controller:
     class: Cerad\Bundle\Api01Bundle\Action\Project\FindOneController
     arguments:
       - '%kernel.root_dir%/config/projects/'
       
+  # ==========================================================
+  # ProjectGame
   cerad_api01__project_game__find_one__controller:
     class: Cerad\Bundle\Api01Bundle\Action\ProjectGame\FindOneController
     arguments:
       - '@cerad_project_game__game_repository'
       
-  cerad_api01__docs__controller:
-    class: Cerad\Bundle\Api01Bundle\Action\Docs\DocsController
-    calls:
-      - [setTemplating, ['@templating']]
+  cerad_api01__project_game__find_all__controller:
+    class: Cerad\Bundle\Api01Bundle\Action\ProjectGame\FindAllController
+    arguments:
+      - '@cerad_project_game__game_repository'
+
     

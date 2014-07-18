@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class FindControllerTest extends WebTestCase
+class FindOneControllerTest extends WebTestCase
 {
     protected $project = '/0.1/project/AYSONationalGames2014';
     
@@ -28,7 +28,10 @@ class FindControllerTest extends WebTestCase
         
         $this->assertEquals('AYSONationalGames2014',$project['id']);
         $this->assertEquals(2,count($project['programs']));
-        $this->assertEquals('2014-07-04',$project['dates'][2]);
+        
+        $dates = array_keys($project['dates']);
+        
+        $this->assertEquals('2014-07-04',$dates[2]);
     }
     public function testFindProjectWithBadKey()
     {
