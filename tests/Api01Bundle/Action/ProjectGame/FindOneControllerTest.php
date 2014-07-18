@@ -47,6 +47,13 @@ class FindOneControllerTest extends WebTestCase
         $this->assertEquals('Toyota Sports Complex',$game['venueName']);
         $this->assertEquals('MA1',$game['fieldName']);
         $this->assertEquals('2014-07-03 10:30:00',$game['dtBeg']);
+        
+        $teams = $game['teams'];
+        $this->assertEquals(2,count($teams));
+        
+        $awayTeam = $teams[1];
+        $this->assertEquals('Away',$awayTeam['role']);
+        
     }
     public function testFindProjectGameWithBadNumber()
     {
