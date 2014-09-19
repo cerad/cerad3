@@ -16,6 +16,13 @@ class FindOneController
     }
     public function __invoke(Request $request, $projectId)
     {
+        // [accept] => [0] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        //             [0] => application/zayso+json:version 1
+        
+        $headers = $request->headers->all();
+        print_r($headers);
+      //die();
+        
         $projectId = $request->attributes->get('projectId');
         
         $projectFile = $this->projectDir . $projectId . '.yml';

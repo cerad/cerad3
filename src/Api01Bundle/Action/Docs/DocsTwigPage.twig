@@ -29,8 +29,16 @@
       <td>Returns a single project with a bunch of information.</td>
     </tr>
     <tr>
+      <td>POST /project</td>
+      <td>Create a project.  Returns 201 Location</td>
+    </tr>
+    <tr>
       <td>GET /project/{project-id}/game/{game-number}</td>
       <td>Returns a single game for a given project.  Note that game numbers are unique within a project.</td>
+    </tr>
+    <tr>
+      <td>POST /project/{project-id}/game</td>
+      <td>Create a Game</td>
     </tr>
     <tr>
       <td>GET /project/{project-id}/games</td>

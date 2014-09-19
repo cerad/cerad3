@@ -10,9 +10,16 @@ cerad_api01__docs:
 # Project
 cerad_api01__project__find_one:
   path: /project/{projectId}
+  methods:  [GET]  
   defaults:
     _controller: cerad_api01__project__find_one__controller:__invoke
     
+cerad_api01__project__post_one:
+  path: /project
+  methods:  [POST]  
+  defaults:
+    _controller: cerad_api01__project__post_one__controller:__invoke
+
 # ==============================
 # ProjectGame
 cerad_api01__project_game__find_one:

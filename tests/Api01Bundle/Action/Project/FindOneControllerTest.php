@@ -4,6 +4,7 @@ namespace Cerad\Bundle\Api01Bundle\Action\Project;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class FindOneControllerTest extends WebTestCase
@@ -14,10 +15,14 @@ class FindOneControllerTest extends WebTestCase
     public function testFindProject()
     {
         $client = static::createClient();
-
-        $client->request('GET', $this->project);
         
-        $response = $client->getResponse();
+        $request = Request::create($this->project,'GET');
+        $request->headers->set('Accept','application/zayso+json; version=1');
+        
+      //$client->doRequest($request);
+      //$client->request('GET', $this->project);
+        
+        $response = $client->getKernel()->handle($request); //$client->getResponse();
         
         $this->assertEquals(Response::HTTP_OK,$response->getStatusCode());
         $this->assertEquals('application/json',$response->headers->get('Content-Type'));
@@ -33,7 +38,7 @@ class FindOneControllerTest extends WebTestCase
         
         $this->assertEquals('2014-07-04',$dates[2]);
     }
-    public function testFindProjectWithBadKey()
+    public function sestFindProjectWithBadKey()
     {
         $client = static::createClient();
 

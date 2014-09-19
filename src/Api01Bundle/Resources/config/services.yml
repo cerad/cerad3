@@ -15,6 +15,13 @@ services:
     arguments:
       - '%kernel.root_dir%/config/projects/'
       
+  cerad_api01__project__post_one__controller:
+    class: Cerad\Bundle\Api01Bundle\Action\Project\PostOneController
+    arguments:
+      - '%kernel.root_dir%/config/projects/'
+    calls:
+      - [setRouter, ['@router']]
+      
   # ==========================================================
   # ProjectGame
   cerad_api01__project_game__find_one__controller:
